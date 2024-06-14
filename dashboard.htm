@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+<meta name="author" content="Kitt Lee">
+<meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+<title>JKDM - TSMS</title>
+
+<link href="./users_files/style.css" rel="stylesheet">
+<link href="./users_files/pace.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css">
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118965717-1');
+    </script>
+<style type="text/css">/* Chart.js */
+
+@keyframes chartjs-render-animation {
+	from { opacity: 0.99; }
+	to { opacity: 1; }
+}
+
+.chartjs-render-monitor {
+	animation: chartjs-render-animation 0.001s;
+}
+
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+	position: absolute;
+	direction: ltr;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	pointer-events: none;
+	visibility: hidden;
+	z-index: -1;
+}
+
+.chartjs-size-monitor-expand > div {
+	position: absolute;
+	width: 1000000px;
+	height: 1000000px;
+	left: 0;
+	top: 0;
+}
+
+.chartjs-size-monitor-shrink > div {
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	left: 0;
+	top: 0;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.menu-item {
+  /*transition: 0.4s;*/
+  color: rgba(255,255,255,.8);
+  /*font-size: 20px;*/
+  text-decoration: none;
+  padding: .8445rem 1rem;
+  /*margin: 0 10px;*/
+  display: flex;
+}
+.menu-item:hover {
+  background-color: #321fdb;
+  color: #ffffff;
+  /*padding: 24px 10px;*/
+}
+
+</style>
+</head>
+
+<body class="c-app pace-done pace-done"><div class="pace pace-inactive pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+<div class="c-sidebar-brand">
+  <img class="c-sidebar-brand-full" src="./img/logo-kastam.png" width="50" alt="JKDM Logo">
+  <img class="c-sidebar-brand-minimized" src="./img/logo-kastam.png" width="50" alt="JKDM Logo">
+</div>
+
+<ul class="c-sidebar-nav ps ps--active-y" data-drodpown-accordion="true">
+
+  <li class="c-sidebar-nav-item">
+    <a href="./dashboard.htm">
+      <span class="menu-item"><i class="lni-dashboard size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">REGISTRATION AND ADMIN</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./reg.htm">
+      <span class="menu-item"><i class="lni-write size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;ID Registration</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./manageReg.htm">
+      <span class="menu-item"><i class="lni-clipboard size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Registration</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./ids.htm">
+      <span class="menu-item"><i class="lni-user size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage IDs</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">ORDERING</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./newOrder.htm">
+      <span class="menu-item"><i class="lni-add-file size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Create Order</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./manageOrder.htm">
+      <span class="menu-item"><i class="lni-bookmark-alt size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Order</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./collectOrder.htm">
+      <span class="menu-item"><i class="lni-package size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Collect Order</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./activation.htm">
+      <span class="menu-item"><i class="lni-stamp size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Activate/Return/Replacement</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">WAREHOUSE</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./warehouse.htm">
+      <span class="menu-item"><i class="lni-delivery size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Warehouse</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./incoming.htm">
+      <span class="menu-item"><i class="lni-enter size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Incoming</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./storing.htm">
+      <span class="menu-item"><i class="lni-agenda size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Storing</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./picking.htm">
+      <span class="menu-item"><i class="lni-customer size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Picking</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./slitting.htm">
+      <span class="menu-item"><i class="lni-cut size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Slitting</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./outgoing.htm">
+      <span class="menu-item"><i class="lni-exit size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Outgoing</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">TRACK & TRACE</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./track.htm">
+      <span class="menu-item"><i class="lni-magnifier size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Track & Trace</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">Verification and Authentication </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./dailyReport.htm">
+      <span class="menu-item"><i class="lni-frame-expand size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Daily Report</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./enforcement.htm">
+      <span class="menu-item"><i class="lni-target size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Enforcement</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">Query and Reporting </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./query.htm">
+      <span class="menu-item"><i class="lni-question-circle size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Query</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./reporting.htm">
+      <span class="menu-item"><i class="lni-stats-up size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Reporting</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">Payment</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./payment.htm">
+      <span class="menu-item"><i class="lni-coin size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Payment Settings</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">Licensing and Product </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./licensing.htm">
+      <span class="menu-item"><i class="lni-lock size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Licensing</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./product.htm">
+      <span class="menu-item"><i class="lni-tag size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Product</span>
+    </a>
+  </li>
+  <li class="c-sidebar-nav-item">
+    <a href="./stamp.htm">
+      <span class="menu-item"><i class="lni-scroll-down size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Stamp</span>
+    </a>
+  </li>
+
+  <li class="c-sidebar-nav-title">Reconciliation</li>
+  <li class="c-sidebar-nav-item">
+    <a href="./recon.htm">
+      <span class="menu-item"><i class="lni-files size-sm"></i>&nbsp;&nbsp;&nbsp;&nbsp;Reconciliation</span>
+    </a>
+  </li>
+
+
+  <div class="ps__rail-x" style="left: 0px; bottom: -278px;">
+    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+  </div>
+  <div class="ps__rail-y" style="top: 278px; height: 544px; right: 0px;">
+    <div class="ps__thumb-y" tabindex="0" style="top: 105px; height: 205px;"></div>
+  </div>
+
+</ul>
+
+<!--button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-unfoldable"></button-->
+</div>
+
+<div class="c-wrapper">
+
+<header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+<button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show"><span class="c-header-toggler-icon"></span></button><a class="c-header-brand d-sm-none" href="#">
+  <img class="c-header-brand-full c-d-dark-none" src="./img/logo-kastam.png" width="50" alt="JKDM Logo">
+  <img class="c-header-brand-minimized c-d-dark-none" src="./img/logo-kastam.png" width="50"alt="JKDM Logo">
+  <img class="c-header-brand-full c-d-light-none" src="./img/logo-kastam.png" width="50" alt="JKDM Logo">
+  <img class="c-header-brand-minimized c-d-light-none" src="./img/logo-kastam.png" width="50" alt="JKDM Logo"></a>
+<button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true"><span class="c-header-toggler-icon"></span></button>
+<ul class="c-header-nav d-md-down-none">
+<li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="./dashboard.htm">Dashboard</a></li>
+<li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Users</a></li>
+<li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Settings</a></li>
+</ul>
+<ul class="c-header-nav mfs-auto">
+
+</ul>
+<ul class="c-header-nav">
+<li class="c-header-nav-item dropdown d-md-down-none mx-2"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+</svg><i class="lni-alarm size-sm"></i><span class="badge badge-pill badge-danger">5</span></a>
+<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+<div class="dropdown-header bg-light"><strong>You have 5 notifications</strong></div><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2 text-success">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-follow"></use>
+</svg> Kitt Lee account edited</a>
+<a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2 text-danger">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-unfollow"></use>
+</svg> Stanley Yeo account edited</a>
+<a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2 text-danger">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-unfollow"></use>
+</svg> Jasper Yeo account edited</a>
+<a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2 text-danger">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-unfollow"></use>
+</svg> Vijaya account edited</a>
+<a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2 text-danger">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-unfollow"></use>
+</svg> Jen Wen account edited</a>
+<a class="dropdown-item text-center border-top" href="#"><strong>View all notification</strong></a>
+</div>
+</li>
+ <li class="c-header-nav-item dropdown d-md-down-none mx-2"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
+</svg><i class="lni-list size-sm"></i><span class="badge badge-pill badge-warning">15</span></a>
+<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+<div class="dropdown-header bg-light"><strong>You have 15 pending tasks</strong></div><a class="dropdown-item d-block" href="#">
+<div class="small mb-1">ID Registration<span class="float-right"><strong>0%</strong></span></div><span class="progress progress-xs">
+<div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</span>
+</a><a class="dropdown-item d-block" href="#">
+<div class="small mb-1">Tax Stamp Activation<span class="float-right"><strong>25%</strong></span></div><span class="progress progress-xs">
+<div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</span>
+</a><a class="dropdown-item d-block" href="#">
+<div class="small mb-1">Warehouse Incoming<span class="float-right"><strong>50%</strong></span></div><span class="progress progress-xs">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</span>
+</a><a class="dropdown-item d-block" href="#">
+<div class="small mb-1">Warehouse Outgoing<span class="float-right"><strong>75%</strong></span></div><span class="progress progress-xs">
+<div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</span>
+</a><a class="dropdown-item d-block" href="#">
+<div class="small mb-1">Track & Trace<span class="float-right"><strong>100%</strong></span></div><span class="progress progress-xs">
+<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</span>
+</a><a class="dropdown-item text-center border-top" href="#"><strong>View all tasks</strong></a>
+</div>
+</li>
+<li class="c-header-nav-item dropdown d-md-down-none mx-2"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+</svg><i class="lni-envelope size-sm"></i><span class="badge badge-pill badge-info">7</span></a>
+<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
+  <div class="dropdown-header bg-light"><strong>You have 7 messages</strong></div><a class="dropdown-item" href="#">
+  <div class="message">
+  <div class="py-3 mfe-3 float-left">
+  <div class="c-avatar"><img class="c-avatar-img" src="./users_files/7.jpg" alt="user@email.com"><span class="c-avatar-status bg-success"></span></div>
+  </div>
+  <div><small class="text-muted">John Doe</small><small class="text-muted float-right mt-1">Just now</small></div>
+  <div class="text-truncate font-weight-bold"><span class="text-danger">!</span> Important message</div>
+  <div class="small text-muted text-truncate">Hi JKDM, congrats on your newly launched website!  Can you please help me to reset my pass...</div>
+  </div>
+  </a><a class="dropdown-item" href="#">
+  <div class="message">
+   <div class="py-3 mfe-3 float-left">
+  <div class="c-avatar"><img class="c-avatar-img" src="./users_files/6.jpg" alt="user@email.com"><span class="c-avatar-status bg-warning"></span></div>
+  </div>
+  <div><small class="text-muted">Stanley Yeo</small><small class="text-muted float-right mt-1">5 minutes ago</small></div>
+  <div class="text-truncate font-weight-bold">Help needed</div>
+  <div class="small text-muted text-truncate">Hi JKDM, congrats on your newly launched website!  Can you please help me to reset my pass...</div>
+  </div>
+  </a><a class="dropdown-item" href="#">
+  <div class="message">
+  <div class="py-3 mfe-3 float-left">
+  <div class="c-avatar"><img class="c-avatar-img" src="./users_files/5.jpg" alt="user@email.com"><span class="c-avatar-status bg-danger"></span></div>
+  </div>
+  <div><small class="text-muted">Kitt Lee</small><small class="text-muted float-right mt-1">1:52 PM</small></div>
+  <div class="text-truncate font-weight-bold">How to register?</div>
+  <div class="small text-muted text-truncate">Hi JKDM, congrats on your newly launched website!  Can you please help me to reset my pass...</div>
+  </div>
+  </a><a class="dropdown-item" href="#">
+  <div class="message">
+  <div class="py-3 mfe-3 float-left">
+  <div class="c-avatar"><img class="c-avatar-img" src="./users_files/4.jpg" alt="user@email.com"><span class="c-avatar-status bg-info"></span></div>
+  </div>
+  <div><small class="text-muted">Jen Wen</small><small class="text-muted float-right mt-1">4:03 PM</small></div>
+  <div class="text-truncate font-weight-bold">Congrats on new website!</div>
+  <div class="small text-muted text-truncate">Hi JKDM, congrats on your newly launched website!  Can you please help me to reset my pass...</div>
+  </div>
+  </a><a class="dropdown-item text-center border-top" href="#"><strong>View all messages</strong></a>
+  </div>
+  </li>
+  <li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li>
+<li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="c-avatar"><img class="c-avatar-img" src="https://c7.uihere.com/icons/751/175/791/user-round-circle-11dfd8d81dad74245ee0db29ca0e0aae.png" alt="user@email.com"></div>
+</a>
+<div class="dropdown-menu dropdown-menu-right pt-0">
+<div class="dropdown-header bg-light py-2"><strong>Account</strong></div><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+</svg> Messages<span class="badge badge-info mfs-auto">7</span></a>
+<a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-task"></use>
+</svg> Notification<span class="badge badge-danger mfs-auto">5</span></a><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use>
+</svg> Tasks<span class="badge badge-warning mfs-auto">15</span></a>
+<div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+</svg> Profile</a><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+</svg> Settings</a>
+<div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+</svg> Suspend Account</a><a class="dropdown-item" href="./login.htm">
+<svg class="c-icon mfe-2">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+</svg> Logout</a>
+</div>
+</li>
+
+</ul>
+<div class="c-subheader justify-content-between px-3">
+
+<ol class="breadcrumb border-0 m-0 px-0 px-md-3">
+<li class="breadcrumb-item">Home</li>
+<li class="breadcrumb-item"><a href="#">Importer</a></li>
+<li class="breadcrumb-item active">Dashboard</li>
+
+</ol>
+
+</div>
+</header>
+<!---------------------------------------- END OF COPY ----------------------------------------->
+
+
+<div class="c-body">
+<main class="c-main">
+<div class="container-fluid">
+<div id="ui-view"><div><link href="./dashboard_files/coreui-chartjs.css" rel="stylesheet">
+
+
+
+<div class="fade-in">
+<div class="row">
+<div class="col-sm-6 col-lg-3">
+<div class="card text-white bg-gradient-info">
+<div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+<div>
+<div class="text-value-lg">9,823</div>
+<div>Total Scans</div>
+</div>
+<div class="btn-group">
+<button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+</svg>
+</button>
+<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(31px, 25px, 0px);"><a class="dropdown-item" href="#">Download Report</a></div>
+</div>
+</div>
+<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+<canvas class="chart chartjs-render-monitor" id="card-chart1" height="140" style="display: block; height: 70px; width: 183px;" width="366"></canvas>
+</div>
+</div>
+</div>
+
+<div class="col-sm-6 col-lg-3">
+<div class="card text-white bg-gradient-warning">
+<div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+<div>
+<div class="text-value-lg">1,897</div>
+<div>Unique Users</div>
+</div>
+<div class="btn-group">
+<button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+</svg>
+</button>
+  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(31px, 25px, 0px);"><a class="dropdown-item" href="#">Download Report</a></div>
+</div>
+</div>
+<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+<canvas class="chart chartjs-render-monitor" id="card-chart2" height="140" width="366" style="display: block; height: 70px; width: 183px;"></canvas>
+</div>
+</div>
+</div>
+
+<div class="col-sm-6 col-lg-3">
+<div class="card text-white bg-gradient-success">
+<div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+<div>
+<div class="text-value-lg">6,823</div>
+<div>Success Scans</div>
+</div>
+<div class="btn-group">
+<button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+</svg>
+</button>
+  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(31px, 25px, 0px);"><a class="dropdown-item" href="#">Download Report</a></div>
+</div>
+</div>
+<div class="c-chart-wrapper mt-3" style="height:70px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+<canvas class="chart chartjs-render-monitor" id="card-chart3" height="140" width="430" style="display: block; height: 70px; width: 215px;"></canvas>
+</div>
+</div>
+</div>
+
+<div class="col-sm-6 col-lg-3">
+<div class="card text-white bg-gradient-danger">
+<div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+<div>
+<div class="text-value-lg">3,000</div>
+<div>Failure Scans</div>
+</div>
+<div class="btn-group">
+<button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="c-icon">
+<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+</svg>
+</button>
+  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(31px, 25px, 0px);"><a class="dropdown-item" href="#">Download Report</a></div>
+</div>
+</div>
+<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+<canvas class="chart chartjs-render-monitor" id="card-chart4" height="140" width="366" style="display: block; height: 70px; width: 183px;"></canvas>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="card">
+<div class="card-body">
+<div class="d-flex justify-content-between">
+<div>
+<h4 class="card-title mb-0">Welcome to Tax Stamp Management System</h4>
+<div class="small text-muted">24 June 2024</div>
+</div>
+<div class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
+<div class="btn-group btn-group-toggle mx-3" data-toggle="buttons">
+<label class="btn btn-outline-secondary">
+<input id="option1" type="radio" name="options" autocomplete="off"> Day
+</label>
+<label class="btn btn-outline-secondary active">
+<input id="option2" type="radio" name="options" autocomplete="off" checked=""> Month
+</label>
+<label class="btn btn-outline-secondary">
+<input id="option3" type="radio" name="options" autocomplete="off"> Year
+</label>
+</div>
+<button class="btn btn-primary" type="button">
+<i class="lni-cloud-download"></i>
+</button>
+</div>
+</div>
+<div class="c-chart-wrapper" style="height:300px;margin-top:40px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+<canvas class="chart chartjs-render-monitor" id="main-chart" height="600" width="1818" style="display: block; height: 300px; width: 909px;"></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div class="row text-center">
+<div class="col-sm-12 col-md mb-sm-2 mb-0">
+<div class="text-muted">Success Scans</div><strong>1,883 Scans</strong>
+<div class="progress progress-xs mt-2">
+<div class="progress-bar bg-gradient-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="col-sm-12 col-md mb-sm-2 mb-0">
+<div class="text-muted">Total Scans</div><strong>2,667 Scans</strong>
+<div class="progress progress-xs mt-2">
+<div class="progress-bar bg-gradient-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="col-sm-12 col-md mb-sm-2 mb-0">
+<div class="text-muted">Unique Users</div><strong>1,287 Users</strong>
+<div class="progress progress-xs mt-2">
+<div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="col-sm-12 col-md mb-sm-2 mb-0">
+<div class="text-muted">Failure Scans</div><strong>784 Scans</strong>
+<div class="progress progress-xs mt-2">
+<div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="col-sm-12 col-md mb-sm-2 mb-0">
+<div class="text-muted">Success Rate</div><strong>70.60%</strong>
+<div class="progress progress-xs mt-2">
+<div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div></div></div>
+</div>
+</main>
+</div>
+<footer class="c-footer">
+<div><a href="https://customs.gov.my/">TSMS</a> © 2024 JKDM.</div>
+<div class="mfs-auto">Powered by&nbsp;Tenderer</div>
+</footer>
+</div>
+
+<script src="./dashboard_files/pace.min.js"></script>
+<script src="./dashboard_files/coreui.bundle.min.js"></script>
+<script>
+      new coreui.AsyncLoad(document.getElementById('ui-view'));
+      document.addEventListener('xhr', function() {
+        Pace.restart()
+      }, true);
+      var tooltipEl = document.getElementById('header-tooltip');
+      var tootltip = new coreui.Tooltip(tooltipEl);
+    </script>
+
+<script type="text/javascript" src="./dashboard_files/coreui-chartjs.bundle.js" class="view-script"></script><script type="text/javascript" src="./dashboard_files/main.js" class="view-script"></script></body></html>
